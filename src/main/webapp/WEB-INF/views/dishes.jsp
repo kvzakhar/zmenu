@@ -96,8 +96,7 @@
 							icons : false,
 							active : utils.getDay() - 1,
 							activate : function(event, ui) {
-								utils
-										.getData(ui.newHeader.context.attributes["data-week"].value);
+								utils.getData(ui.newHeader.context.attributes["data-week"].value);
 							}
 						});
 	});
