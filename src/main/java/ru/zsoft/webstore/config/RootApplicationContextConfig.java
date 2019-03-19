@@ -79,7 +79,7 @@ public class RootApplicationContextConfig {
 	}
 	
 	@Bean
-	public PlatformTransactionManager transactionManager(@Qualifier("dataSourcePG") DataSource dataSource) {
+	public PlatformTransactionManager transactionManager(@Qualifier("dataSourceHeroku") DataSource dataSource) {
 		DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
 		transactionManager.setDataSource(dataSource);
 		return transactionManager;
