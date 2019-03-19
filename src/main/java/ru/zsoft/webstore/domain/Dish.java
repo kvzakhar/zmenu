@@ -12,10 +12,10 @@ public class Dish implements Serializable {
 	private BigDecimal unitPrice;
 	private BigDecimal weight;
 	private String description;
-	private String category;
+	private Integer category;
 	private BigDecimal dayServed;
 	private BigDecimal weekServed;
-	private boolean discontinued;
+	//private boolean discontinued;
 	private String imageSource;
 
 	public String getImageSource() {
@@ -67,22 +67,22 @@ public class Dish implements Serializable {
 		this.description = description;
 	}
 
-	public String getCategory() {
+	public Integer getCategory() {
 		return category;
 	}
 
-	public void setCategory(String category) {
+	public void setCategory(Integer category) {
 		this.category = category;
 	}
 
 
-	public boolean isDiscontinued() {
+/*	public boolean isDiscontinued() {
 		return discontinued;
 	}
 
 	public void setDiscontinued(boolean discontinued) {
 		this.discontinued = discontinued;
-	}	
+	}	*/
 
 	public String getDishId() {
 		return dishId;

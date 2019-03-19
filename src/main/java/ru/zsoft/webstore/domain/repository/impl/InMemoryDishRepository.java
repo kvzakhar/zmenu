@@ -23,13 +23,13 @@ public class InMemoryDishRepository implements DishRepository {
 	@Override
 	public List<Dish> getAllDishes() {
 		Map<String, Object> params = new HashMap<>();
-		List<Dish> result = jdbcTemplate.query("select * from DISHES", params, new DishMapper());
+		List<Dish> result = jdbcTemplate.query("select * from MENU", params, new DishMapper());
 		return result;
 	}
 	
 	@Override
 	public List<Dish> getDishesByCategory(String category) {
-		String sql = "SELECT * FROM DISHES WHERE CATEGORY = :catergory";
+		String sql = "SELECT * FROM MENU WHERE CATEGORY = :catergory";
 		Map<String, Object> params = new HashMap<>();
 		params.put("catergory", category);
 		System.out.println(category);
@@ -40,7 +40,7 @@ public class InMemoryDishRepository implements DishRepository {
 
 	@Override
 	public List<Dish> getDishesByWeekDay(int week, int day) {
-		String sql = "SELECT * FROM DISHES WHERE WEEK_SERVED = :weekServed AND DAY_SERVED = :dayServed";
+		String sql = "SELECT * FROM MENU WHERE WEEK_SERVED = :weekServed AND DAY_SERVED = :dayServed";
 		Map<String, Object> params = new HashMap<>();
 		params.put("weekServed", week);
 		params.put("dayServed", day);
@@ -58,11 +58,10 @@ public class InMemoryDishRepository implements DishRepository {
 			 dish.setName(rs.getString("NAME"));
 			 dish.setDescription(rs.getString("DESCRIPTION"));
 			 dish.setWeight(rs.getBigDecimal("WEIGHT"));
-	         dish.setUnitPrice(rs.getBigDecimal("UNIT_PRICE"));
-	         dish.setCategory(rs.getString("CATEGORY"));
+	         dish.setUnitPrice(rs.getBigDecimal("PRICE"));
+	         dish.setCategory(rs.getInt("CATEGORY_ID"));
 	         dish.setWeekServed(rs.getBigDecimal("WEEK_SERVED"));
 	         dish.setDayServed(rs.getBigDecimal("DAY_SERVED"));
-	         dish.setDiscontinued(rs.getBoolean("DISCONTINUED"));
 	         dish.setImageSource(rs.getString("IMAGE_SRC"));
 	         
 	         return dish;

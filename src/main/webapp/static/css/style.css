@@ -46,7 +46,14 @@ h5 {
 	color: #131230;
 	font-family: playfair display, serif;
 /* 	text-transform: capitalize; */
-	font-size: 14px !important;
+	font-size: 13px !important;
+	font-weight: 600
+}
+
+.h5A {
+	color: #131230;
+	font-family: serif;
+	font-size: 13px !important;
 	font-weight: 600
 }
 

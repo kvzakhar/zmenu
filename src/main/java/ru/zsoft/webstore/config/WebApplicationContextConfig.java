@@ -1,8 +1,11 @@
 package ru.zsoft.webstore.config;
 
+import java.io.IOException;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -27,6 +30,12 @@ public class WebApplicationContextConfig extends WebMvcConfigurerAdapter {
 		internalResourceViewResolver.setPrefix("/WEB-INF/views/");
 		internalResourceViewResolver.setSuffix(".jsp");
 		return internalResourceViewResolver;
+	}
+	
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer placeHolderConfigurer() throws IOException{
+		PropertySourcesPlaceholderConfigurer bean = new PropertySourcesPlaceholderConfigurer();
+		return bean;
 	}
 	
 	@Override

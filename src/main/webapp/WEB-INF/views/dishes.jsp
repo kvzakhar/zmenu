@@ -35,7 +35,6 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-<!-- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 <script>
 	utils = {
 				loadDishesByDate : function(weekDay) {
@@ -89,16 +88,15 @@
 			}),
 
 	$(function() {
-		$(".accordion-inner")
-				.accordion(
-						{
-							heightStyle : "content",
-							icons : false,
-							active : utils.getDay() - 1,
-							activate : function(event, ui) {
-								utils.getData(ui.newHeader.context.attributes["data-week"].value);
-							}
-						});
+		$(".accordion-inner").accordion(
+				{
+					heightStyle : "content",
+					icons : false,
+					active : utils.getDay() - 1,
+					activate : function(event, ui) {
+						utils.getData(ui.newHeader.context.attributes["data-week"].value);
+					}
+				});
 	});
 </script>
 <style>
@@ -132,29 +130,6 @@
 	overflow: auto;
 }
 
-.top5 {
-	margin-top: 5px;
-}
-
-.top7 {
-	margin-top: 7px;
-}
-
-.top10 {
-	margin-top: 10px;
-}
-
-.top15 {
-	margin-top: 15px;
-}
-
-.top17 {
-	margin-top: 17px;
-}
-
-.top30 {
-	margin-top: 30px;
-}
 </style>
 <link rel="stylesheet" href="http://localhost:8080/webstore/static/css/style.css">
 <link rel="stylesheet" href="http://localhost:8080/webstore/static/css/file.css">
@@ -370,30 +345,30 @@
 										<div class="panel">
 											<h6>Супы</h6>
 											<ul>
-												<li>Солянка 300гр 90р</li>
-												<li>Тыквенный крем-суп 250гр 75р</li>
-												<li>Чечевичный с курицей 300гр 75р</li>
+												<li class="h5A">Солянка 300гр</li>
+												<li class="h5A">Тыквенный крем-суп 250гр</li>
+												<li class="h5A">Чечевичный с курицей 300гр</li>
 											</ul>
 											<br>
 											<h6>Гарниры</h6>
 											<ul>
-												<li>Рис с овощами 150гр 55р</li>
-												<li>Цветная капуста с сыром 150гр 65р</li>
-												<li>Отварной картофель с зеленью 150гр 35р</li>
+												<li class="h5A">Рис с овощами 150гр</li>
+												<li class="h5A">Цветная капуста с сыром 150гр</li>
+												<li class="h5A">Отварной картофель с зеленью 150гр</li>
 											</ul>
 											<br>
 											<h6>Вторые блюда</h6>
 											<ul>
-												<li>Тефтели в томатном соусе 180гр 75р</li>
-												<li>Шашлычок куриный 100гр 80р</li>
-												<li>Плов с курицей 160гр 65р</li>
+												<li class="h5A">Тефтели в томатном соусе 180гр</li>
+												<li class="h5A">Шашлычок куриный 100гр</li>
+												<li class="h5A">Плов с курицей 160гр</li>
 											</ul>
 											<br>
 											<h6>Салаты</h6>
 											<ul>
-												<li>Чафан 150гр 65р</li>
-												<li>Овощной с мясным сбором 150гр 60р</li>
-												<li>Из краснокочанной капусты 135гр 50р</li>
+												<li class="h5A">Чафан 150гр</li>
+												<li class="h5A">Овощной с мясным сбором 150гр</li>
+												<li class="h5A">Из краснокочанной капусты 135гр</li>
 											</ul>
 										</div></li>
 									<li><a data-week="32" href="#">Вторник</a>
@@ -461,7 +436,7 @@
 								</ul></li>
 							<li><a data-week="4" href="#">Четвертая неделя</a>
 								<ul class="accordion-inner">
-									<li><a href="#">Понедельник</a>
+									<li><a data-week="41" href="#">Понедельник</a>
 										<div class="panel">
 											<h6>Супы</h6>
 											<ul>
@@ -491,7 +466,7 @@
 												<li>Из краснокочанной капусты 135гр 50р</li>
 											</ul>
 										</div></li>
-									<li><a href="#">Вторник</a>
+									<li><a data-week="42" href="#">Вторник</a>
 										<div class="panel">
 											<h6>Супы</h6>
 											<ul>
@@ -521,7 +496,7 @@
 												<li>Из краснокочанной капусты 135гр 50р</li>
 											</ul>
 										</div></li>
-									<li><a href="#" class="accordion1">Среда</a>
+									<li><a data-week="43" href="#">Среда</a>
 										<div class="panel">
 											<h6>Супы</h6>
 											<ul>
@@ -550,7 +525,10 @@
 												<li>Овощной с мясным сбором 150гр 60р</li>
 												<li>Из краснокочанной капусты 135гр 50р</li>
 											</ul>
-										</div></li>
+										</div>
+									</li>
+									<li><a data-week="44" href="#">Четверг</a>
+									<li><a data-week="45" href="#">Пятница</a>								
 								</ul></li>
 						</ul>
 
