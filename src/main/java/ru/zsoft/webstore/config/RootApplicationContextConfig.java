@@ -84,5 +84,4 @@ public class RootApplicationContextConfig {
 		transactionManager.setDataSource(dataSource);
 		return transactionManager;
 	}
-
 }

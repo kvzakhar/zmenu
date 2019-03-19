@@ -131,8 +131,8 @@
 }
 
 </style>
-<link rel="stylesheet" href="http://localhost:8080/webstore/static/css/style.css">
-<link rel="stylesheet" href="http://localhost:8080/webstore/static/css/file.css">
+<link rel="stylesheet" href="static/css/style.css">
+<link rel="stylesheet" href="static/css/file.css">
 </head>
 
 <body>
