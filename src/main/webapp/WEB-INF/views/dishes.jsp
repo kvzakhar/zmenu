@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Products</title>
+<title>BrotherFood</title>
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 <!-- Bootstrap core CSS -->
@@ -135,14 +135,17 @@
 <link rel="stylesheet" href="static/css/file.css">
 </head>
 
-<body>
+<body class="bg">
+	<header>
+		<h1>Наше меню</h1>
+		<p>Всегда свежая и вкусная еда!</p>
+	</header>
+<!-- 	<div class="bg"> -->
 
-	<div class="bg">
-
-		<div class="container">
-			<h1>Наше меню</h1>
-			<p>Всегда свежая и вкусная еда!</p>
-		</div>
+<!-- 		<div class="container"> -->
+<!-- 			<h1>Наше меню</h1> -->
+<!-- 			<p>Всегда свежая и вкусная еда!</p> -->
+<!-- 		</div> -->
 
 		<section class="food-area section-padding">
 			<div class="container">
@@ -560,7 +563,7 @@
 				</div>
 			</div>
 		</section>
-	</div>
+<!-- 	</div> -->
 
 	<!-- Bootstrap tooltips -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>

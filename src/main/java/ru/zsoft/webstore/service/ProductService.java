@@ -1,15 +1,16 @@
 package ru.zsoft.webstore.service;
 
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Map;
 
 import ru.zsoft.webstore.domain.Product;
-import ru.zsoft.webstore.domain.repository.impl.InMemoryProductRepository;
 
 public interface ProductService {
 
 	void updateAllStock();
 	List<Product> getAllProducts();
 	List<Product> getProductsByCategory(String category);
+	List<Product> getProductByFilter(Map<String, List<String>> params);
+	Product getProductById(String productId);
+	void addProduct(Product product);
 }

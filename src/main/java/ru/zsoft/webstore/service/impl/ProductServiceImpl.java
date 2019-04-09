@@ -1,6 +1,7 @@
 package ru.zsoft.webstore.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -48,13 +49,28 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public List<Product> getAllProducts() {
 		List<Product> result = repository.getAllProducts();
-		System.out.println(result.size());
+		//System.out.println(result.size());
 		return result;
 	}
 
 	@Override
 	public List<Product> getProductsByCategory(String category) {
 		return repository.getProductByCategory(category);
+	}
+
+	@Override
+	public List<Product> getProductByFilter(Map<String, List<String>> params) {		
+		return repository.getProductByFilter(params);
+	}
+
+	@Override
+	public Product getProductById(String productId) {
+		return repository.getProductById(productId);
+	}
+
+	@Override
+	public void addProduct(Product product) {
+		repository.addProduct(product);		
 	}
 
 }

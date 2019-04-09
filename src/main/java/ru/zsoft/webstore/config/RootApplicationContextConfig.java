@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -23,14 +24,14 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @PropertySource("classpath:application.properties")
-@ComponentScan("ru.zsoft.webstore.domain")
-//@EnableTransactionManagement
+@ComponentScan("ru.zsoft.webstore")
+@EnableTransactionManagement
 public class RootApplicationContextConfig {
 	
 	@Autowired
 	Environment environment;
 	
-	//@Bean(name = "dataSourceHSQL")	
+	@Bean(name = "dataSourceHSQL")	
 	public DataSource dataSourceHSQL() {
 		EmbeddedDatabaseBuilder embeddedDatabaseBuilder = new EmbeddedDatabaseBuilder();
 		EmbeddedDatabase embeddedDatabase = embeddedDatabaseBuilder.
@@ -41,7 +42,8 @@ public class RootApplicationContextConfig {
 		return embeddedDatabase;
 	}
 	
-	//@Bean(name = "dataSourcePG")
+	@Bean(name = "dataSourcePG")
+	@Lazy
 	public DataSource dataSourcePG() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName(environment.getRequiredProperty("db.driver"));
@@ -54,6 +56,7 @@ public class RootApplicationContextConfig {
 	}
 	
 	@Bean(name = "dataSourceHeroku")
+	@Lazy
 	public DataSource dataSourceHeroku() {
 		try {
 		    URI dbUri = new URI(System.getenv("DATABASE_URL"));
@@ -74,12 +77,12 @@ public class RootApplicationContextConfig {
 	}
 	
 	@Bean
-	public NamedParameterJdbcTemplate geJdbcTemplate(@Qualifier("dataSourceHeroku") DataSource dataSource) {
+	public NamedParameterJdbcTemplate geJdbcTemplate(@Qualifier("dataSourceHSQL") DataSource dataSource) {
 		return new NamedParameterJdbcTemplate(dataSource);
 	}
 	
 	@Bean
-	public PlatformTransactionManager transactionManager(@Qualifier("dataSourceHeroku") DataSource dataSource) {
+	public PlatformTransactionManager transactionManager(@Qualifier("dataSourceHSQL") DataSource dataSource) {
 		DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
 		transactionManager.setDataSource(dataSource);
 		return transactionManager;
