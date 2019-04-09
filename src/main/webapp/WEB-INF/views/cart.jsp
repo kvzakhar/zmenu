@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-<script src="/webstore/static/js/controllers.js"></script>
+<script src="<c:url value="/static/js/controllers.js"></c:url>"></script>
 
 <title>Cart</title>
 </head>

@@ -23,10 +23,12 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-<script src="/webstore/static/js/controllers.js"></script>
+<script src="<c:url value="/static/js/controllers.js"></c:url>"></script>
 
-<link rel="stylesheet" href="http://localhost:8080/webstore/static/css/style.css">
-<link rel="stylesheet" href="http://localhost:8080/webstore/static/css/file.css">
+<!-- <link rel="stylesheet" href="http://localhost:8080/webstore/static/css/style.css">
+<link rel="stylesheet" href="http://localhost:8080/webstore/static/css/file.css"> -->
+<link rel="stylesheet" href="<c:url value="/static/css/style.css"></c:url>">
+<link rel="stylesheet" href="<c:url value="/static/css/file.css"></c:url>">
 </head>
 
 <body>
