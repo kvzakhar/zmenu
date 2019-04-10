@@ -22,8 +22,8 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-<link rel="stylesheet" href="http://localhost:8080/webstore/static/css/style.css">
-<link rel="stylesheet" href="http://localhost:8080/webstore/static/css/file.css">
+<link rel="stylesheet" href="<c:url value="/static/css/style.css"></c:url>">
+<link rel="stylesheet" href="<c:url value="/static/css/file.css"></c:url>">
 </head>
 
 <body>
