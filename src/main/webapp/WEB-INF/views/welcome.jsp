@@ -18,6 +18,9 @@
           <div class="jumbotron">
                   <h1> ${greeting} </h1>
                   <p> ${tagline} </p>
+                  
+                  <a href="/market/products">список продуктов</a>
+                  <p>User: Admin and Password: P12345</p>
           </div>
      </body>
 </html>
