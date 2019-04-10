@@ -1,4 +1,4 @@
-Sample code for websrore application by the book Spring MVC Begginer's Guide
+Sample code for webstore application by the book Spring MVC Begginer's Guide
 
 Link: https://zwebstore.herokuapp.com/
 For authentication use user: admin and password: P12345.
